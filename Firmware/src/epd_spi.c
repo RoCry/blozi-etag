@@ -33,9 +33,9 @@ _attribute_ram_code_ void EPD_init(void)
     gpio_set_output_en(EPD_MOSI, 1);
     gpio_setup_up_down_resistor(EPD_MOSI, PM_PIN_PULLUP_1M);
 
-    gpio_set_output_en(EPD_ENABLE, 0);
-    gpio_set_input_en(EPD_ENABLE, 1);
-    gpio_setup_up_down_resistor(EPD_ENABLE, PM_PIN_PULLUP_1M);
+    // gpio_set_output_en(EPD_ENABLE, 0);
+    // gpio_set_input_en(EPD_ENABLE, 1);
+    // gpio_setup_up_down_resistor(EPD_ENABLE, PM_PIN_PULLUP_1M);
 }
 
 _attribute_ram_code_ void EPD_SPI_Write(unsigned char value)

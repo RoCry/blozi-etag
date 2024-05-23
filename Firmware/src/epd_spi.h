@@ -1,8 +1,11 @@
 #pragma once
 
-#define EPD_POWER_ON() gpio_write(EPD_ENABLE, 0)
+// #define EPD_POWER_ON() gpio_write(EPD_ENABLE, 0)
+// #define EPD_POWER_OFF() gpio_write(EPD_ENABLE, 1)
 
-#define EPD_POWER_OFF() gpio_write(EPD_ENABLE, 1)
+// nope define for compile error
+#define EPD_POWER_ON()
+#define EPD_POWER_OFF()
 
 #define EPD_ENABLE_WRITE_CMD() gpio_write(EPD_DC, 0)
 #define EPD_ENABLE_WRITE_DATA() gpio_write(EPD_DC, 1)
