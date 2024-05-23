@@ -305,7 +305,7 @@ _attribute_ram_code_ void epd_display(struct date_time _time, uint16_t battery_m
 
     char buff[100];
     battery_level = get_battery_level(battery_mv);
-    sprintf(buff, "S24_%02X%02X%02X %s", mac_public[2], mac_public[1], mac_public[0], epd_model_string[epd_model]);
+    sprintf(buff, "BLZ_%02X%02X%02X %s", mac_public[2], mac_public[1], mac_public[0], epd_model_string[epd_model]);
     obdWriteStringCustom(&obd, (GFXfont *)&Dialog_plain_16, 1, 17, (char *)buff, 1);
     sprintf(buff, "%s", BLE_conn_string[ble_get_connected()]);
     obdWriteStringCustom(&obd, (GFXfont *)&Dialog_plain_16, 232, 20, (char *)buff, 1);
@@ -388,7 +388,7 @@ void epd_display_time_with_date(struct date_time _time, uint16_t battery_mv, int
     char buff[100];
     battery_level = get_battery_level(battery_mv);
 
-    sprintf(buff, "S24_%02X%02X%02X", mac_public[2], mac_public[1], mac_public[0]);
+    sprintf(buff, "BLZ_%02X%02X%02X", mac_public[2], mac_public[1], mac_public[0]);
     obdWriteStringCustom(&obd, (GFXfont *)&Dialog_plain_16, 1, 17, (char *)buff, 1);
 
     if (ble_get_connected()) {

@@ -55,7 +55,7 @@ static u16 serviceChangeVal[2] = {0};
 
 static u8 serviceChangeCCC[2] = {0,0};
 
-static const u8 my_devName[] = {'E','S','L'};
+static const u8 my_devName[] = {'B','L','Z'};
 
 static const u8 my_PnPtrs [] = {0x02, 0x8a, 0x24, 0x66, 0x82, 0x01, 0x00};
 
