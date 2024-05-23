@@ -7,7 +7,7 @@
 #include "epd_bw_213.h"
 #include "epd_bwr_213.h"
 #include "epd_bw_213_ice.h"
-//#include "epd_bwr_154.h"
+// #include "epd_bwr_154.h"
 #include "epd_bwr_296.h"
 #include "drivers.h"
 #include "stack/ble/ble.h"
@@ -74,19 +74,19 @@ _attribute_ram_code_ void EPD_detect_model(void)
     gpio_write(EPD_RESET, 1);
     WaitMs(10);
 
-    // Here we neeed to detect it
-    if (EPD_BWR_296_detect())
-    {
-        epd_model = 5;
-    }
-    else if (EPD_BWR_213_detect())
+    // remove 296 for now
+    // if (EPD_BWR_296_detect())
+    // {
+    //     epd_model = 5;
+    // }
+    if (EPD_BWR_213_detect())
     {
         epd_model = 2;
     }
-//    else if (EPD_BWR_154_detect())// Right now this will never trigger, the 154 is same to 213BWR right now.
-//    {
-//        epd_model = 3;
-//    }
+    // else if (EPD_BWR_154_detect()) // Right now this will never trigger, the 154 is same to 213BWR right now.
+    // {
+    //     epd_model = 3;
+    // }
     else if (EPD_BW_213_ice_detect())
     {
         epd_model = 4;
@@ -95,7 +95,7 @@ _attribute_ram_code_ void EPD_detect_model(void)
     {
         epd_model = 1;
     }
-    epd_model = 5; // FIXME: only for bwr_296
+
     EPD_POWER_OFF();
 }
 
