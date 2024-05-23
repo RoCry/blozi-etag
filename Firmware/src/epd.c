@@ -95,7 +95,6 @@ _attribute_ram_code_ void EPD_detect_model(void)
     {
         epd_model = 1;
     }
-    epd_model = 5;
 
     EPD_POWER_OFF();
 }
